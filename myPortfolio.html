@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+  <div class="main-container">
+      
+        <nav>
+          <h2 class="logo">Portfo<span>lio</span></h2>
+
+          <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#skills">Skills</a></li>
+          </ul>
+
+          <button id="theme-toggle" class="theme-toggle">🌙</button>
+        </nav>
+
+        <div class="content" id="home">
+              <h4>Hello my name is</h4>
+              <h1>Alvin <span>Abogado</span> </h1>
+        </div>
+  </div>
+
+  <section class="about" id="about">
+        <div class="main">
+            <img src="gradpic.png" alt="cat">
+            <div class="about-text">
+                <h2>About Me</h2>
+                
+                <p>
+                    Hi! I’m a recent Information Technology graduate with a strong interest in web development. I enjoy solving problems, writing clean code, and learning new technologies. I'm looking for opportunities where I can grow as a developer, improve my programming and logic skills, and be part of a team that builds real-world web applications that create impact.
+                </p>
+            </div>
+        </div>
+
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <div class="title">
+      <h2><i class="fas fa-folder-open"></i> My Projects</h2>
+    </div>
+    <div class="box">
+      <div class="card">
+        <h5><i class="fas fa-chalkboard-teacher"></i> Online Class Scheduling</h5>
+        <div class="pra">
+          <p>Technologies used: HTML, CSS, JavaScript, Bootstrap</p>
+          <p style="text-align: center;">
+            <a href="https://github.com/Nivla0021/class-scheduler" class="button" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <h5><i class="fas fa-shopping-cart"></i> E-COMMERCE Website</h5>
+        <div class="pra">
+          <p>Technologies used: HTML, CSS, JavaScript, PHP, MySQL</p>
+          <p style="text-align: center;">
+            <a href="https://github.com/Nivla0021/e-commerce" class="button" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <h5><i class="fas fa-university"></i> Queueing System for Banks</h5>
+        <div class="pra">
+          <p>Technologies used: Quasar (Vue.js), Laravel</p>
+          <p style="text-align: center;">
+            <a href="https://github.com/Nivla0021/queueing-system" class="button" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <div class="title">
+      <h2>My Skills</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3><i class="fas fa-code"></i> Web Development</h3>
+        <ul>
+          <li><i class="fab fa-vuejs"></i> Quasar Framework (Vue.js)</li>
+          <li><i class="fab fa-html5"></i> HTML, <i class="fab fa-css3-alt"></i> CSS, <i class="fab fa-bootstrap"></i> Bootstrap</li>
+          <li><i class="fab fa-js"></i> JavaScript</li>
+          <li><i class="fab fa-laravel"></i> Laravel, PHP</li>
+          <li><i class="fas fa-database"></i> MySQL</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3><i class="fas fa-mobile-alt"></i> Mobile Development</h3>
+        <ul>
+          <li><i class="fab fa-java"></i> Java (Android Studio)</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3><i class="fas fa-code-branch"></i> Version Control</h3>
+        <ul>
+          <li><i class="fab fa-git-alt"></i> Git, <i class="fab fa-github"></i> GitHub, <i class="fab fa-gitlab"></i> GitLab</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <p>If you want to know me more  - please click the link below to 
+      follow my socials
+    </p>
+    <div class="social">
+      <a href="https://web.facebook.com/alvin.chavez.abogado" target="_blank"><img src="facebook.png" alt="fb" class="so"></a>
+      <a href="https://github.com/Nivla0021" target="_blank"><img src="github.png" alt="isnta" class="so"></a>
+      <a href="https://www.linkedin.com/in/alvin-abogado-688810290/" target="_blank"><img src="linkedin.png" alt="twi" class=" so"></a>
+    </div>
+  </footer>
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Load saved theme
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark');
+      toggle.textContent = '☀️';
+    } else {
+      toggle.textContent = '🌙';
+    }
+
+    // Reveal after setting theme
+    document.body.style.visibility = 'visible';
+
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      const isDark = body.classList.contains('dark');
+      toggle.textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+</script>
+</body>
+</html>
